@@ -1,0 +1,49 @@
+{
+  "storage": {
+    "root": "storage",
+    "status": "skill-local",
+    "env_override": "PERSONAL_KB_ROOT"
+  },
+  "cleanup": {
+    "auto_merge_mode": "ai",
+    "exact_duplicate_threshold": 0.95,
+    "same_issue_strategy": {
+      "mode": "ai",
+      "same_day_merge": true,
+      "time_span_hours": 2,
+      "title_similarity": 0.85,
+      "complementary_types": true
+    },
+    "fix_superseded_state": true,
+    "log_level": "info"
+  },
+  "search": {
+    "expand_queries": true,
+    "include_archived_on_empty": true
+  },
+  "usage": {
+    "heat_field": "used_count",
+    "heat_field_role": "legacy_baseline",
+    "runtime_events": "repos/_meta/adoption_events.jsonl",
+    "effective_usage": "legacy_used_count_plus_deduplicated_runtime_heat"
+  },
+  "write": {
+    "default_update_mode": "auto",
+    "promotion_threshold": 10,
+    "demotion_days": 30
+  },
+  "smart_routing": {
+    "enabled": true,
+    "project_keywords": {
+      "personal-kb": {
+        "keywords": ["personal-kb", "KB", "知识库", "kb_search", "kb_add", "kb_update"],
+        "weight": 1.3
+      }
+    },
+    "confidence_threshold": 2,
+    "fallback_to_recent": true,
+    "kb_history_lookup": true,
+    "code_feature_scan": false,
+    "auto_learn_from_kb": true
+  }
+}

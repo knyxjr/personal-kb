@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal KB"
+  short_description: "检索并维护项目内经过验证的跨会话经验、决策与纠错记录"
+  default_prompt: "Use $personal-kb to retrieve and verify relevant project history before continuing this task."

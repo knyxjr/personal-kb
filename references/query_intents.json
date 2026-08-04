@@ -1,0 +1,9 @@
+[
+  {
+    "name": "retrieval-expansion",
+    "markers": ["零命中", "没有命中", "扩大范围", "再查", "zero hits", "broaden the search"],
+    "required_any": ["故障", "错误", "异常", "根因", "以前", "历史", "failure", "error", "history"],
+    "anchors": ["故障", "根因", "修复", "issue", "pitfall", "failure", "fix"],
+    "weight": 0.82
+  }
+]

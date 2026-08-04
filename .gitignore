@@ -1,0 +1,15 @@
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv/
+*.lock
+.env
+.env.*
+*.env
+# Runtime state and durable KB data are opt-in when publishing this Skill.
+storage/**
+!storage/repos/
+!storage/repos/.gitkeep

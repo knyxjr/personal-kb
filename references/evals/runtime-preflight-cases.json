@@ -1,0 +1,26 @@
+{
+  "version": "portable-v1",
+  "cases": [
+    {
+      "id": "current-log-sufficient",
+      "prompt": "当前 500 异常栈已经足够，请直接根据当前日志定位根因。"
+    },
+    {
+      "id": "prior-decision-parent-retrieval",
+      "prompt": "export-format 是否保留 CSV？按上次确认的决定来。"
+    },
+    {
+      "id": "broad-history-kb-scout",
+      "prompt": "整理以前多个项目和历史阶段确认过的路径映射，供两个 worker 共用。",
+      "context": {
+        "cross_session_dependency": true,
+        "retrieval_scope": "broad",
+        "dependent_worker_count": 2
+      }
+    },
+    {
+      "id": "runtime-audit-no-rag",
+      "prompt": "多 Agent 审计这两天 Personal KB 的运行效果和历史会话。"
+    }
+  ]
+}

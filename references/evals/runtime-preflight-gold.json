@@ -1,0 +1,66 @@
+{
+  "gold_version": "portable-v1",
+  "cases": [
+    {
+      "id": "current-log-sufficient",
+      "expected": {
+        "action": "skip",
+        "phase": "skip",
+        "should_retrieve": false,
+        "kb_owner": "none",
+        "retrieval_route": "none",
+        "handoff_required": false
+      }
+    },
+    {
+      "id": "prior-decision-parent-retrieval",
+      "expected": {
+        "action": "retrieve",
+        "phase": "retrieve",
+        "should_retrieve": true,
+        "kb_owner": "parent",
+        "retrieval_route": "parent_direct",
+        "handoff_required": false,
+        "query_anchor_groups": [
+          ["上次确认"]
+        ]
+      },
+      "retrieval_expectation": {
+        "allow_zero_hits": true,
+        "min_hits": 0,
+        "max_irrelevant_rate": 1.0
+      }
+    },
+    {
+      "id": "broad-history-kb-scout",
+      "expected": {
+        "action": "retrieve",
+        "phase": "retrieve",
+        "should_retrieve": true,
+        "kb_owner": "kb_scout",
+        "retrieval_route": "kb_scout",
+        "handoff_required": true,
+        "query_anchor_groups": [
+          ["多个项目"],
+          ["路径映射"]
+        ]
+      },
+      "retrieval_expectation": {
+        "allow_zero_hits": true,
+        "min_hits": 0,
+        "max_irrelevant_rate": 1.0
+      }
+    },
+    {
+      "id": "runtime-audit-no-rag",
+      "expected": {
+        "action": "audit_readonly",
+        "phase": "audit",
+        "should_retrieve": false,
+        "kb_owner": "parent",
+        "retrieval_route": "parent_audit",
+        "handoff_required": false
+      }
+    }
+  ]
+}
