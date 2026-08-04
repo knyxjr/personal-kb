@@ -20,6 +20,10 @@ $env:PYTHONIOENCODING = 'utf-8'
 
 The default durable and runtime data root is `$SkillRoot\storage`. Do not set `PERSONAL_KB_ROOT` during ordinary use; reserve it for isolated tests or an explicit migration.
 
+## GitHub release boundary
+
+The installed directory containing this file is the only content source for GitHub releases. For this workspace, use `F:\桌面\oc\.agents\skills\personal-kb` as the source and `F:\桌面\oc\repos\personal-kb-release` as the permanent Git worktree. Sync from the source before publishing; never use or recreate `tmp\personal-kb-release` as a release source. Publish the Skill baseline to `main`; keep durable visual KB data only on the independent `visual-production` overlay branch.
+
 ## Decide whether to retrieve
 
 Retrieve only when the answer depends on at least one of these:
